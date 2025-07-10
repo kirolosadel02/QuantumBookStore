@@ -10,10 +10,6 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-/**
- * Main bookstore class implementing Facade pattern.
- * Provides a simplified interface to the complex bookstore subsystem.
- */
 public class QuantumBookStore {
     private final BookRepository repository;
     private final Map<String, BookFactory> factories;
@@ -64,8 +60,6 @@ public class QuantumBookStore {
     public List<Book> getAllBooks() {
         return repository.getAllBooks();
     }
-
-    // ✅ All these methods are now correctly inside the class
 
     public void addPaperBook(String isbn, String title, String author, int publishYear, double price, int stock) {
         BookFactory factory = factories.get("PAPER");
